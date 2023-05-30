@@ -1,6 +1,10 @@
+using UnityToolbarExtender;
+
+using UnityEngine;
+using UnityEditor;
+
 using System;
 using System.Runtime.InteropServices;
-using UnityEditor;
 using System.Diagnostics;
 
 [InitializeOnLoad]
@@ -65,7 +69,7 @@ public static class ToggleTitleBar
     }
 
     [MenuItem("Title Bar/Toggle _F11")]
-    private static void Toggle() {
+    public static void Toggle() {
         if (hidden) {
             Show();
             EditorApplication.update -= OnUpdate;
@@ -78,5 +82,22 @@ public static class ToggleTitleBar
     private static void OnUpdate()
     {
         if (hidden && GetMenu(hwnd)!=IntPtr.Zero) Hide();
+    }
+}
+
+
+// https://github.com/marijnz/unity-toolbar-extender
+[InitializeOnLoad]
+public class ToggleTitleBarButton
+{
+    static ToggleTitleBarButton()
+    {
+        ToolbarExtender.RightToolbarGUI.Add(OnToolbarGUI);
+    }
+
+    static void OnToolbarGUI()
+    {
+        GUILayout.FlexibleSpace();
+        if(GUILayout.Button(new GUIContent("Titlebar toggle", "Toggle Unity's Titlebar and main menu"), EditorStyles.toolbarButton)) ToggleTitleBar.Toggle();
     }
 }
