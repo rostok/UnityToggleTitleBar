@@ -1,7 +1,7 @@
 # UnityToggleTitleBar
 A simple editor script that maximizes Unity's window area by hiding title bar and menu (Windows only)
 
-![UnityToggleTitleBar in action](GIF/screen-cap-960.gif)
+![UnityToggleTitleBar in action](https://rostok.github.io/cdn/UnityToggleTitleBar/screen-cap-960.gif)
 
 # Installation
 Just paste this repo's GIT url into Unity's package manager (PLUS SIGN, add package from GIT URL)

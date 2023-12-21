@@ -1,6 +1,6 @@
 {
   "name": "com.github.rostok.unitytoggletitlebar",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "displayName": "UnityToggleTitleBar",
   "description": "A simple editor script that maximizes Unity's window area by hiding title bar and menu (Windows only)",
   "unity": "2022.2",

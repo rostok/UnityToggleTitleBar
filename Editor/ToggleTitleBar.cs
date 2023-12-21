@@ -61,7 +61,7 @@ public static class ToggleTitleBar
         SetHandles();
         if (hwnd == IntPtr.Zero) return;
         SetWindowLong(hwnd, GWL_STYLE, GetWindowLong(hwnd, GWL_STYLE) & ~(WS_CAPTION));
-        SetWindowPos(hwnd, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED ); 
+        // SetWindowPos(hwnd, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED ); // unsure why this prevents add component search box to show
         ShowWindow(hwnd, SW_MAXIMIZE ); // also maximize
         Menu.SetChecked("Title Bar/Toggle", true);
         SetMenu(hwnd,IntPtr.Zero);
